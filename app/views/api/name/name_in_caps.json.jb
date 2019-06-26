@@ -1,1 +1,1 @@
-{message: "It works mah dude"}
+{name_in_caps: @name, message: @message}
