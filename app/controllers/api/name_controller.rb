@@ -2,9 +2,11 @@ class Api::NameController < ApplicationController
 
   def name_in_caps
     p params
-    @name = params["name"].upcase
-    if @name.chr.downcase == "a"
+    name = params["name"]
+    if name.chr.downcase == "a"
       @message = "Hey, your name starts with the first letter of the alphabet!"
+    else
+      @message = name.upcase
     end
     render 'name_in_caps.json.jb'
   end
