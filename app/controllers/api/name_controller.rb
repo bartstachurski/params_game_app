@@ -12,11 +12,12 @@ class Api::NameController < ApplicationController
   def guess_a_number
     number = rand(0..100)
     p number
-    if params["guess"].to_i == number
+    guess = params["guess"]
+    if guess.to_i == number
       @message = "Congrats, you guessed correctly!"
-    elsif params["guess"].to_i < number
+    elsif guess.to_i < number
       @message = "Oops, too low. Guess a higher number."
-    else params["guess"].to_i > number
+    else guess.to_i > number
       @message = "Oops, too high. Guess a lower number."
     end
     render 'guess_a_number.json.jb'
