@@ -13,7 +13,6 @@ class Api::NameController < ApplicationController
 
   def guess_a_number
     number = rand(0..100)
-    p number
     guess = params["guess"]
     if guess.to_i == number
       @message = "Congrats, you guessed correctly!"
