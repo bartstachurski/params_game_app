@@ -23,4 +23,15 @@ class Api::NameController < ApplicationController
     end
     render 'guess_a_number.json.jb'
   end
+
+  def login
+    username = params[:username]
+    password = params[:password]
+    if username == "hugh" && password == "swordfish"
+      @message = "Valid credentials."
+    else
+      @message = "Invalid credentials."
+    end
+    render 'login.json.jb'
+  end
 end
